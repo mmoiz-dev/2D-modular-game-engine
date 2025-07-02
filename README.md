@@ -4,37 +4,82 @@ Welcome to the 2D Modular Game Engine project! This repository contains the sour
 
 ## 🎮 Features
 
-- **Entity System**: Create and manage various game entities (players, mobs, etc.).
-- **Tile-Based Levels**: Load and render levels from images for easy editing.
+- **Entities**: Base classes for different types of game entities, including players and mobs.
+- **Level Management**: Tools for managing and loading levels with tile-based graphics.
+- **Graphics Rendering**: Handles rendering of game objects and UI elements with support for spritesheets.
+- **Networking**: Basic client-server networking capabilities for multiplayer support.
+- **Input Handling**: Keyboard input management for player interactions.
+- **Window Handling**: Manages the game window, supporting window events and resizing.
 - **Custom Graphics Engine**: Low-level rendering with color and sprite management.
-- **Basic Networking**: Supports multiplayer via simple client-server architecture.
-- **Input Handling**: Responsive keyboard input for player control.
 
 ## 🗂️ Project Structure
 
 ```
-2D-modular-game-engine/
-├── src/
-│ └── ca/group01/game/
-│ ├── entities/ # Entity, Mob, Player, etc.
-│ ├── gfx/ # Colours, Font, Screen, etc.
-│ ├── level/ # Level logic and tiles
-│ ├── net/ # Networking (client, server, packets)
-│ ├── Game.java
-│ ├── GameLauncher.java
-│ └── InputHandler.java
-├── res/
-│ ├── levels/ # Level images
-│ └── sprite_sheet.png # Spritesheet for graphics
+2d-modular-game-engine
+├── res
+│   ├── levels
+│   │   ├── small_test_level.png
+│   │   └── water_test_level.png
+│   └── spritesheet.png
+├── src
+│   └── ca
+│       └── group1
+│           └── game
+│               ├── entities
+│               │   ├── Entity.java
+│               │   ├── Mob.java
+│               │   ├── Player.java
+│               │   └── PlayerMP.java
+│               ├── gfx
+│               │   ├── Colours.java
+│               │   ├── Font.java
+│               │   ├── Screen.java
+│               │   └── SpriteSheet.java
+│               ├── level
+│               │   ├── tiles
+│               │   │   ├── AnimatedTile.java
+│               │   │   ├── BasicSolidTile.java
+│               │   │   ├── BasicTile.java
+│               │   │   └── Tile.java
+│               │   └── Level.java
+│               ├── net
+│               │   ├── packets
+│               │   │   ├── Packet.java
+│               │   │   ├── Packet00Login.java
+│               │   │   ├── Packet01Disconnect.java
+│               │   │   └── Packet02Move.java
+│               │   ├── GameClient.java
+│               │   └── GameServer.java
+│               ├── Game.java
+│               ├── GameLauncher.java
+│               ├── InputHandler.java
+│               └── WindowHandler.java
 ├── LICENSE
 └── README.md
 ```
-
 ## 🛠️ Technologies Used
 
 - **Java**: Core language for engine and game logic
 - **Custom Graphics**: Manual pixel manipulation and rendering
 - **Basic Networking**: Java Sockets for multiplayer
+
+## Prerequisites
+- Java Development Kit (JDK) 8 or higher
+- IDE (e.g., IntelliJ IDEA, Eclipse, VSCode)
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mmoiz-dev/2d-modular-game-engine.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd 2d-modular-game-engine
+   ```
+3. Compile the engine:
+   ```bash
+   javac -d bin src/**/*.java
+   ```
 
 ## 📝 How to Run
 
